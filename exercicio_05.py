@@ -1,10 +1,7 @@
 
 notas = []
 
-nota = float(input("Nota: "))
-if nota >= 0:
-    notas.append(nota)
-
+nota = 1
 while nota > 0:
     nota = float(input("Nota: "))
     if nota >= 0:

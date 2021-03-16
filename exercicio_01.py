@@ -7,7 +7,14 @@ O programa deve calcular a média alcançada por aluno e apresentar:
 """
 
 nota1 = float(input("Digite a primeira nota: "))
+while (nota1 < 0) or (nota1 > 10):
+    print("Valor invalido!")
+    nota1 = float(input("Digite a primeira nota: "))
+
 nota2 = float(input("Digite a segunda nota: "))
+while (nota2 < 0) or (nota2 > 10):
+    print("Valor invalido!")
+    nota2 = float(input("Digite a segunda nota: "))
 
 media = (nota1+nota2)/2
 

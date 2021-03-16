@@ -11,15 +11,12 @@ quando todos os dados forem informados corretamente.
 """
 
 nome = str(input("Digite o nome: "))
-contadorNome = 0
-for x in nome:
-    contadorNome += 1
+contadorNome = len(nome)
 while contadorNome <= 3:
     contadorNome = 0
     nome = str(input("Não é possivel nome menor que 3 caracteres!" 
                      "Digite novamente o nome: "))
-    for x in nome:
-        contadorNome += 1
+    contadorNome = len(nome)
 
 idade = int(input("Digite a idade: "))
 while (idade < 0) or (idade > 150):
