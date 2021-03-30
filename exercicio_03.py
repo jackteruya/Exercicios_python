@@ -11,9 +11,8 @@ taxaB: float = 1.5
 tempo = 0
 
 while paisA < paisB:
-    n = 1
-    paisA: int = paisA * ((1 + taxaA/100) ** n)
-    paisB: int = paisB * ((1 + taxaB/100) ** n)
+    paisA: int = paisA * ((1 + taxaA/100) ** 1)
+    paisB: int = paisB * ((1 + taxaB/100) ** 1)
     print(int(paisA), " ", int(paisB))
     tempo += 1
 

@@ -1,33 +1,24 @@
 import pandas as pd
-import math as m
 
-from io import StringIO
+localArquivo = input("Digite o local do arquivo: ")
 
+df = pd.read_csv(localArquivo, dtype={"nome": str, "idade": int, "altura": int})
 
+qtdeAluno = len(df['nome'])
 
-#df = pd.read_csv("dadosAlunos.csv", usecols=['idade', 'altura']).head()
+print("Quantidade de alunos: {}".format(qtdeAluno))
 
-df = pd.read_csv("dadosAlunos.csv", dtype = {"nome": str, "idade": int, "altura": int})
+mediaAltura = float(df['altura'].sum()/qtdeAluno)
 
-#print(df.to_string())
+print("Altura média dos alunos: {:.2f}".format(mediaAltura))
 
-#print(df[['idade', 'altura']])
+alturaMaiorMedia = 0
+idadeMaior13 = 0
 
-altura = df[['altura']]
-
-print(altura)
-
-
-
-#soma = m.fsum(colunaAlutra)
-
-#print(colunaAlutra)
+df2 = df.loc[(df['altura']<mediaAltura) & (df['idade']>13)]
 
 
+print("Total de alunos com mais de 13 anos e altura inferior" +
+      " a média de altura dos alunos: {}\n".format(len(df2)))
 
-
-
-
-'''dados['idade'].head()
-
-print(dados)'''
+print(df2)
